@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+   <v-app-bar color="primary" dark>
+    <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
+    <v-toolbar-title>Expenses</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-btn icon>
+      <v-icon>mdi-bell</v-icon>
+    </v-btn>
+    <v-btn icon>
+      <v-icon>mdi-account-circle</v-icon>
+    </v-btn>
+  </v-app-bar>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "App",
+  methods: {
+    toggleDrawer() {
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    }
+  },
+  components: {
+    // HelloWorld,
+  },
+};
+</script>
