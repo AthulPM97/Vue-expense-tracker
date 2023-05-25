@@ -8,7 +8,8 @@ import About from '../components/pages/About.vue'
 
 const routes = [
     {path: '/', component: Home},
-    {path: '/about', component: About}
+    {path: '/about', component: About},
+    // {path: '/expenses', component: }
 ];
 
 const router = new VueRouter({

@@ -1,5 +1,18 @@
 <template>
-  <NavBar />
+  <div>
+    <NavBar />
+    <v-container>
+      <v-form ref="form" v-model="valid" lazy-validation>
+        <v-text-field
+          v-model="name"
+          :counter="10"
+          :rules="nameRules"
+          label="Name"
+          required
+        ></v-text-field>
+      </v-form>
+    </v-container>
+  </div>
 </template>
 
 <script>

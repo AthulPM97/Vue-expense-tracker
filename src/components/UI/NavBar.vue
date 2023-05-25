@@ -9,7 +9,7 @@
 
       <v-toolbar-title>Expense Tracker</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn color="secondary">Expenses</v-btn>
+      <v-btn style="background-color: #3d3c77;" @click="goToExpenses">Expenses</v-btn>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -18,7 +18,7 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
+          <v-list-item @click="goToHome">
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
@@ -30,6 +30,13 @@
               <v-icon>mdi-account</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Account</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item @click="goToAbout">
+            <v-list-item-icon>
+              <v-icon>mdi-information</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>About</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -44,5 +51,16 @@ export default {
     drawer: false,
     group: null,
   }),
+  methods: {
+    goToExpenses() {
+      this.$router.push('/expenses')
+    },
+    goToAbout() {
+      this.$router.push('/about')
+    },
+    goToHome() {
+      this.$router.push('/')
+    }
+  }
 };
 </script>
