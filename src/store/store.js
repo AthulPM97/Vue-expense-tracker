@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
+Vue.use(Vuex);
 
-Vue.use(Vuex)
+import expense from "./expense";
 
 export const store = new Vuex.Store({
-    state: {
-
-    },
-    getters: {
-
-    },
-    mutations: {
-
-    }
-})
+  state: {
+    // expenses: [{id: 1, amount: 100, description: 'Milk shake'}],
+  },
+  mutations: {},
+  actions: {},
+  modules: {
+    expense,
+  },
+});
