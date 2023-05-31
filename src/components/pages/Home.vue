@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar />
-    <v-form>
+    <v-form @submit="addExpense">
       <v-container>
         <v-row>
           <v-col cols="12" md="4">
@@ -19,21 +19,12 @@
               required
             ></v-text-field>
           </v-col>
-          <v-col cols="12" md="4" class="d-flex">
-            <v-select
-              v-model="expense.category"
-              :items="categories"
-              label="Expense Category"
-              required
-            ></v-select>
+          <v-col cols="12" md="4">
+            <v-btn type="submit" dark> Add expense </v-btn>
           </v-col>
         </v-row>
       </v-container>
-      <v-row>
-        <v-col cols="12" md="4">
-          <v-btn color="primary"> Primary </v-btn>
-        </v-col>
-      </v-row>
+      <v-row>{{  }} </v-row>
     </v-form>
   </div>
 </template>
@@ -50,11 +41,15 @@ export default {
       expense: {
         amount: "",
         description: "",
-        category: "",
       },
-      categories: ["Personal", "Business"],
     };
   },
-  methods: {},
+  methods: {
+    addExpense(e) {
+      e.preventDefault()
+      this.$store.dispatch("expense/addExpense", this.expense)
+      console.log(this.$store.state.expense.expenses)
+    }
+  },
 };
 </script>
