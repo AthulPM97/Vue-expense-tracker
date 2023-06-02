@@ -2,7 +2,7 @@ export default {
   namespaced: true,
 
   state: {
-    expenses: [{ id: 1, amount: 100, description: "Milk shake" }],
+    expenses: JSON.parse(localStorage.getItem('expenses')) || [{ id: 1, amount: 100, description: "Milk shake" }],
     currentUser: "John",
   },
   mutations: {
